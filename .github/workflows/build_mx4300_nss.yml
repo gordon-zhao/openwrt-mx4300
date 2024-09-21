@@ -42,6 +42,10 @@ jobs:
             - name: Build firmware images
               run: make -j4 world
 
+            - name: Build Kernel
+              if: failure()
+              run: make -j1 target/linux/compile && make -j4 world
+
             - name: Pack packages
               run:  tar cvfz bin/packages.tar.gz -C bin/targets/qualcommax/ipq807x/packages .
 
