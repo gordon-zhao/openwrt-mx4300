@@ -40,7 +40,7 @@ jobs:
               run:  sh genconfig_nss.sh 
 
             - name: Build firmware images
-              run: make -j$(($(nproc)+1)) world
+              run: make -j$(($(nproc)+1)) V=sc world
 
             - name: Pack packages
               run:  tar cvfz bin/packages.tar.gz -C bin/targets/qualcommax/ipq807x/packages .
