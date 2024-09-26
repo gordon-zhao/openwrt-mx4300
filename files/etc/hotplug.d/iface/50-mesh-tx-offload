@@ -1,0 +1,2 @@
+#!/bin/ash
+ethtool --offload phy2-mesh0 tx-checksumming off
